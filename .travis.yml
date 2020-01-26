@@ -16,7 +16,7 @@ after_success:
   #login to docker cli 2
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #push to docker hub 2
+  - docker push a2ron44/mutli-worker
   - docker push a2ron44/mutli-client
   - docker push a2ron44/mutli-nginx
   - docker push a2ron44/mutli-server
-  - docker push a2ron44/mutli-worker
