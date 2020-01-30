@@ -10,13 +10,13 @@ script:
 
 after_success:
   - docker build -t a2ron44/multi-client ./client
-  - docker build -t a2ron44/mutil-nginx ./nginx
+  - docker build -t a2ron44/multi-nginx ./nginx
   - docker build -t a2ron44/multi-server ./server
-  - docker build -t a2ron44/mutli-worker ./worker
+  - docker build -t a2ron44/multi-worker ./worker
   #login to docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #push to docker hub 2
-  - docker push a2ron44/mutli-worker
-  - docker push a2ron44/mutli-client
-  - docker push a2ron44/mutli-nginx
-  - docker push a2ron44/mutli-server
+  - docker push a2ron44/multi-client
+  - docker push a2ron44/multi-worker
+  - docker push a2ron44/multi-nginx
+  - docker push a2ron44/multi-server
