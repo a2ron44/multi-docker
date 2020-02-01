@@ -20,3 +20,15 @@ after_success:
   - docker push a2ron44/multi-worker
   - docker push a2ron44/multi-nginx
   - docker push a2ron44/multi-server
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-1
+  app: multi-docker2
+  env: MultiDocker2-env
+  bucket_name: elasticbeanstalk-us-east-1-807638837950
+  bucket_path: multi-docker
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
