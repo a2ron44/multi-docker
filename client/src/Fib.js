@@ -45,10 +45,11 @@ class Fib extends Component {
       index: this.state.index
     });
     this.setState({ index: "" });
+    this.fetchValues();
+    this.fetchIndexes();
   };
 
   render() {
-    console.log(this.state.values);
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
